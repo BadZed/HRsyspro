@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wk.mapper.TAdminMapper" >
+  <resultMap id="BaseResultMap" type="com.wk.pojo.TAdmin" >
+    <result column="AD_ACCOUNT" property="adAccount" jdbcType="VARCHAR" />
+    <result column="AD_PASS" property="adPass" jdbcType="VARCHAR" />
+    <result column="AD_NAME" property="adName" jdbcType="VARCHAR" />
+    <result column="AD_SEX" property="adSex" jdbcType="VARCHAR" />
+    <result column="AD_BIRTH" property="adBirth" jdbcType="TIMESTAMP" />
+    <result column="AD_PHONE" property="adPhone" jdbcType="VARCHAR" />
+    <result column="AD_EMAIL" property="adEmail" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    AD_ACCOUNT, AD_PASS, AD_NAME, AD_SEX, AD_BIRTH, AD_PHONE, AD_EMAIL
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wk.pojo.TAdminExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_ADMIN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.wk.pojo.TAdminExample" >
+    delete from T_ADMIN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wk.pojo.TAdmin" >
+    insert into T_ADMIN (AD_ACCOUNT, AD_PASS, AD_NAME, 
+      AD_SEX, AD_BIRTH, AD_PHONE, 
+      AD_EMAIL)
+    values (#{adAccount,jdbcType=VARCHAR}, #{adPass,jdbcType=VARCHAR}, #{adName,jdbcType=VARCHAR}, 
+      #{adSex,jdbcType=VARCHAR}, #{adBirth,jdbcType=TIMESTAMP}, #{adPhone,jdbcType=VARCHAR}, 
+      #{adEmail,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.wk.pojo.TAdmin" >
+    insert into T_ADMIN
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="adAccount != null" >
+        AD_ACCOUNT,
+      </if>
+      <if test="adPass != null" >
+        AD_PASS,
+      </if>
+      <if test="adName != null" >
+        AD_NAME,
+      </if>
+      <if test="adSex != null" >
+        AD_SEX,
+      </if>
+      <if test="adBirth != null" >
+        AD_BIRTH,
+      </if>
+      <if test="adPhone != null" >
+        AD_PHONE,
+      </if>
+      <if test="adEmail != null" >
+        AD_EMAIL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="adAccount != null" >
+        #{adAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="adPass != null" >
+        #{adPass,jdbcType=VARCHAR},
+      </if>
+      <if test="adName != null" >
+        #{adName,jdbcType=VARCHAR},
+      </if>
+      <if test="adSex != null" >
+        #{adSex,jdbcType=VARCHAR},
+      </if>
+      <if test="adBirth != null" >
+        #{adBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="adPhone != null" >
+        #{adPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="adEmail != null" >
+        #{adEmail,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wk.pojo.TAdminExample" resultType="java.lang.Integer" >
+    select count(*) from T_ADMIN
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update T_ADMIN
+    <set >
+      <if test="record.adAccount != null" >
+        AD_ACCOUNT = #{record.adAccount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adPass != null" >
+        AD_PASS = #{record.adPass,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adName != null" >
+        AD_NAME = #{record.adName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adSex != null" >
+        AD_SEX = #{record.adSex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adBirth != null" >
+        AD_BIRTH = #{record.adBirth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.adPhone != null" >
+        AD_PHONE = #{record.adPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.adEmail != null" >
+        AD_EMAIL = #{record.adEmail,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update T_ADMIN
+    set AD_ACCOUNT = #{record.adAccount,jdbcType=VARCHAR},
+      AD_PASS = #{record.adPass,jdbcType=VARCHAR},
+      AD_NAME = #{record.adName,jdbcType=VARCHAR},
+      AD_SEX = #{record.adSex,jdbcType=VARCHAR},
+      AD_BIRTH = #{record.adBirth,jdbcType=TIMESTAMP},
+      AD_PHONE = #{record.adPhone,jdbcType=VARCHAR},
+      AD_EMAIL = #{record.adEmail,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>

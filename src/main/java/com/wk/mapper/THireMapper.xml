@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wk.mapper.THireMapper" >
+  <resultMap id="BaseResultMap" type="com.wk.pojo.THire" >
+    <result column="HR_ID" property="hrId" jdbcType="DECIMAL" />
+    <result column="HR_JOB" property="hrJob" jdbcType="VARCHAR" />
+    <result column="HR_SAL" property="hrSal" jdbcType="VARCHAR" />
+    <result column="HR_JOBINFOR" property="hrJobinfor" jdbcType="VARCHAR" />
+    <result column="HR_WELFARE" property="hrWelfare" jdbcType="VARCHAR" />
+    <result column="HR_COMINFOR" property="hrCominfor" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    HR_ID, HR_JOB, HR_SAL, HR_JOBINFOR, HR_WELFARE, HR_COMINFOR
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wk.pojo.THireExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from T_HIRE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.wk.pojo.THireExample" >
+    delete from T_HIRE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.wk.pojo.THire" >
+    insert into T_HIRE (HR_ID, HR_JOB, HR_SAL, 
+      HR_JOBINFOR, HR_WELFARE, HR_COMINFOR
+      )
+    values (#{hrId,jdbcType=DECIMAL}, #{hrJob,jdbcType=VARCHAR}, #{hrSal,jdbcType=VARCHAR}, 
+      #{hrJobinfor,jdbcType=VARCHAR}, #{hrWelfare,jdbcType=VARCHAR}, #{hrCominfor,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.wk.pojo.THire" >
+    insert into T_HIRE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="hrId != null" >
+        HR_ID,
+      </if>
+      <if test="hrJob != null" >
+        HR_JOB,
+      </if>
+      <if test="hrSal != null" >
+        HR_SAL,
+      </if>
+      <if test="hrJobinfor != null" >
+        HR_JOBINFOR,
+      </if>
+      <if test="hrWelfare != null" >
+        HR_WELFARE,
+      </if>
+      <if test="hrCominfor != null" >
+        HR_COMINFOR,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="hrId != null" >
+        #{hrId,jdbcType=DECIMAL},
+      </if>
+      <if test="hrJob != null" >
+        #{hrJob,jdbcType=VARCHAR},
+      </if>
+      <if test="hrSal != null" >
+        #{hrSal,jdbcType=VARCHAR},
+      </if>
+      <if test="hrJobinfor != null" >
+        #{hrJobinfor,jdbcType=VARCHAR},
+      </if>
+      <if test="hrWelfare != null" >
+        #{hrWelfare,jdbcType=VARCHAR},
+      </if>
+      <if test="hrCominfor != null" >
+        #{hrCominfor,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.wk.pojo.THireExample" resultType="java.lang.Integer" >
+    select count(*) from T_HIRE
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update T_HIRE
+    <set >
+      <if test="record.hrId != null" >
+        HR_ID = #{record.hrId,jdbcType=DECIMAL},
+      </if>
+      <if test="record.hrJob != null" >
+        HR_JOB = #{record.hrJob,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hrSal != null" >
+        HR_SAL = #{record.hrSal,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hrJobinfor != null" >
+        HR_JOBINFOR = #{record.hrJobinfor,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hrWelfare != null" >
+        HR_WELFARE = #{record.hrWelfare,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hrCominfor != null" >
+        HR_COMINFOR = #{record.hrCominfor,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update T_HIRE
+    set HR_ID = #{record.hrId,jdbcType=DECIMAL},
+      HR_JOB = #{record.hrJob,jdbcType=VARCHAR},
+      HR_SAL = #{record.hrSal,jdbcType=VARCHAR},
+      HR_JOBINFOR = #{record.hrJobinfor,jdbcType=VARCHAR},
+      HR_WELFARE = #{record.hrWelfare,jdbcType=VARCHAR},
+      HR_COMINFOR = #{record.hrCominfor,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+</mapper>
