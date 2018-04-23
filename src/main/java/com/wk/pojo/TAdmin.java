@@ -1,8 +1,9 @@
 package com.wk.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class TAdmin {
+public class TAdmin implements Serializable {
     private String adAccount;
 
     private String adPass;

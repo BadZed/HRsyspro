@@ -1,6 +1,8 @@
 package com.wk.pojo;
 
-public class THire {
+import java.io.Serializable;
+
+public class THire implements Serializable {
     private Long hrId;
 
     private String hrJob;

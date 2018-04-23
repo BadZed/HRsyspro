@@ -1,6 +1,8 @@
 package com.wk.pojo;
 
-public class TEmp {
+import java.io.Serializable;
+
+public class TEmp implements Serializable {
     private String empAccount;
 
     private String empName;

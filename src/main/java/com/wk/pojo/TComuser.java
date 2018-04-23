@@ -1,6 +1,8 @@
 package com.wk.pojo;
 
-public class TComuser {
+import java.io.Serializable;
+
+public class TComuser implements Serializable {
     private Long cuId;
 
     private String cuUsername;
