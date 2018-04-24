@@ -1,8 +1,9 @@
 package com.wk.pojo;
 
 import java.io.Serializable;
+import java.util.Date;
 
-public class THire implements Serializable {
+public class THire implements Serializable{
     private Long hrId;
 
     private String hrJob;
@@ -13,7 +14,9 @@ public class THire implements Serializable {
 
     private String hrWelfare;
 
-    private String hrCominfor;
+    private String hrAddress;
+
+    private Date hrDate;
 
     public Long getHrId() {
         return hrId;
@@ -55,23 +58,19 @@ public class THire implements Serializable {
         this.hrWelfare = hrWelfare == null ? null : hrWelfare.trim();
     }
 
-    public String getHrCominfor() {
-        return hrCominfor;
+    public String getHrAddress() {
+        return hrAddress;
     }
 
-    public void setHrCominfor(String hrCominfor) {
-        this.hrCominfor = hrCominfor == null ? null : hrCominfor.trim();
+    public void setHrAddress(String hrAddress) {
+        this.hrAddress = hrAddress == null ? null : hrAddress.trim();
     }
 
-    @Override
-    public String toString() {
-        return "THire{" +
-                "hrId=" + hrId +
-                ", hrJob='" + hrJob + '\'' +
-                ", hrSal='" + hrSal + '\'' +
-                ", hrJobinfor='" + hrJobinfor + '\'' +
-                ", hrWelfare='" + hrWelfare + '\'' +
-                ", hrCominfor='" + hrCominfor + '\'' +
-                '}';
+    public Date getHrDate() {
+        return hrDate;
+    }
+
+    public void setHrDate(Date hrDate) {
+        this.hrDate = hrDate;
     }
 }

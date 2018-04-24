@@ -1,6 +1,7 @@
 package com.wk.pojo;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class THireExample {
@@ -444,73 +445,133 @@ public class THireExample {
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforIsNull() {
-            addCriterion("HR_COMINFOR is null");
+        public Criteria andHrAddressIsNull() {
+            addCriterion("HR_ADDRESS is null");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforIsNotNull() {
-            addCriterion("HR_COMINFOR is not null");
+        public Criteria andHrAddressIsNotNull() {
+            addCriterion("HR_ADDRESS is not null");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforEqualTo(String value) {
-            addCriterion("HR_COMINFOR =", value, "hrCominfor");
+        public Criteria andHrAddressEqualTo(String value) {
+            addCriterion("HR_ADDRESS =", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforNotEqualTo(String value) {
-            addCriterion("HR_COMINFOR <>", value, "hrCominfor");
+        public Criteria andHrAddressNotEqualTo(String value) {
+            addCriterion("HR_ADDRESS <>", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforGreaterThan(String value) {
-            addCriterion("HR_COMINFOR >", value, "hrCominfor");
+        public Criteria andHrAddressGreaterThan(String value) {
+            addCriterion("HR_ADDRESS >", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforGreaterThanOrEqualTo(String value) {
-            addCriterion("HR_COMINFOR >=", value, "hrCominfor");
+        public Criteria andHrAddressGreaterThanOrEqualTo(String value) {
+            addCriterion("HR_ADDRESS >=", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforLessThan(String value) {
-            addCriterion("HR_COMINFOR <", value, "hrCominfor");
+        public Criteria andHrAddressLessThan(String value) {
+            addCriterion("HR_ADDRESS <", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforLessThanOrEqualTo(String value) {
-            addCriterion("HR_COMINFOR <=", value, "hrCominfor");
+        public Criteria andHrAddressLessThanOrEqualTo(String value) {
+            addCriterion("HR_ADDRESS <=", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforLike(String value) {
-            addCriterion("HR_COMINFOR like", value, "hrCominfor");
+        public Criteria andHrAddressLike(String value) {
+            addCriterion("HR_ADDRESS like", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforNotLike(String value) {
-            addCriterion("HR_COMINFOR not like", value, "hrCominfor");
+        public Criteria andHrAddressNotLike(String value) {
+            addCriterion("HR_ADDRESS not like", value, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforIn(List<String> values) {
-            addCriterion("HR_COMINFOR in", values, "hrCominfor");
+        public Criteria andHrAddressIn(List<String> values) {
+            addCriterion("HR_ADDRESS in", values, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforNotIn(List<String> values) {
-            addCriterion("HR_COMINFOR not in", values, "hrCominfor");
+        public Criteria andHrAddressNotIn(List<String> values) {
+            addCriterion("HR_ADDRESS not in", values, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforBetween(String value1, String value2) {
-            addCriterion("HR_COMINFOR between", value1, value2, "hrCominfor");
+        public Criteria andHrAddressBetween(String value1, String value2) {
+            addCriterion("HR_ADDRESS between", value1, value2, "hrAddress");
             return (Criteria) this;
         }
 
-        public Criteria andHrCominforNotBetween(String value1, String value2) {
-            addCriterion("HR_COMINFOR not between", value1, value2, "hrCominfor");
+        public Criteria andHrAddressNotBetween(String value1, String value2) {
+            addCriterion("HR_ADDRESS not between", value1, value2, "hrAddress");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateIsNull() {
+            addCriterion("HR_DATE is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateIsNotNull() {
+            addCriterion("HR_DATE is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateEqualTo(Date value) {
+            addCriterion("HR_DATE =", value, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateNotEqualTo(Date value) {
+            addCriterion("HR_DATE <>", value, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateGreaterThan(Date value) {
+            addCriterion("HR_DATE >", value, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("HR_DATE >=", value, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateLessThan(Date value) {
+            addCriterion("HR_DATE <", value, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateLessThanOrEqualTo(Date value) {
+            addCriterion("HR_DATE <=", value, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateIn(List<Date> values) {
+            addCriterion("HR_DATE in", values, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateNotIn(List<Date> values) {
+            addCriterion("HR_DATE not in", values, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateBetween(Date value1, Date value2) {
+            addCriterion("HR_DATE between", value1, value2, "hrDate");
+            return (Criteria) this;
+        }
+
+        public Criteria andHrDateNotBetween(Date value1, Date value2) {
+            addCriterion("HR_DATE not between", value1, value2, "hrDate");
             return (Criteria) this;
         }
     }

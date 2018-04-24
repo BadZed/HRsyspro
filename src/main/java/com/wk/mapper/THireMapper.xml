@@ -7,7 +7,8 @@
     <result column="HR_SAL" property="hrSal" jdbcType="VARCHAR" />
     <result column="HR_JOBINFOR" property="hrJobinfor" jdbcType="VARCHAR" />
     <result column="HR_WELFARE" property="hrWelfare" jdbcType="VARCHAR" />
-    <result column="HR_COMINFOR" property="hrCominfor" jdbcType="VARCHAR" />
+    <result column="HR_ADDRESS" property="hrAddress" jdbcType="VARCHAR" />
+    <result column="HR_DATE" property="hrDate" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -68,7 +69,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    HR_ID, HR_JOB, HR_SAL, HR_JOBINFOR, HR_WELFARE, HR_COMINFOR
+    HR_ID, HR_JOB, HR_SAL, HR_JOBINFOR, HR_WELFARE, HR_ADDRESS, HR_DATE
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wk.pojo.THireExample" >
     select
@@ -92,11 +93,11 @@
   </delete>
   <insert id="insert" parameterType="com.wk.pojo.THire" >
     insert into T_HIRE (HR_ID, HR_JOB, HR_SAL, 
-      HR_JOBINFOR, HR_WELFARE, HR_COMINFOR
-      )
+      HR_JOBINFOR, HR_WELFARE, HR_ADDRESS, 
+      HR_DATE)
     values (#{hrId,jdbcType=DECIMAL}, #{hrJob,jdbcType=VARCHAR}, #{hrSal,jdbcType=VARCHAR}, 
-      #{hrJobinfor,jdbcType=VARCHAR}, #{hrWelfare,jdbcType=VARCHAR}, #{hrCominfor,jdbcType=VARCHAR}
-      )
+      #{hrJobinfor,jdbcType=VARCHAR}, #{hrWelfare,jdbcType=VARCHAR}, #{hrAddress,jdbcType=VARCHAR}, 
+      #{hrDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.wk.pojo.THire" >
     insert into T_HIRE
@@ -116,8 +117,11 @@
       <if test="hrWelfare != null" >
         HR_WELFARE,
       </if>
-      <if test="hrCominfor != null" >
-        HR_COMINFOR,
+      <if test="hrAddress != null" >
+        HR_ADDRESS,
+      </if>
+      <if test="hrDate != null" >
+        HR_DATE,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -136,8 +140,11 @@
       <if test="hrWelfare != null" >
         #{hrWelfare,jdbcType=VARCHAR},
       </if>
-      <if test="hrCominfor != null" >
-        #{hrCominfor,jdbcType=VARCHAR},
+      <if test="hrAddress != null" >
+        #{hrAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="hrDate != null" >
+        #{hrDate,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -165,8 +172,11 @@
       <if test="record.hrWelfare != null" >
         HR_WELFARE = #{record.hrWelfare,jdbcType=VARCHAR},
       </if>
-      <if test="record.hrCominfor != null" >
-        HR_COMINFOR = #{record.hrCominfor,jdbcType=VARCHAR},
+      <if test="record.hrAddress != null" >
+        HR_ADDRESS = #{record.hrAddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hrDate != null" >
+        HR_DATE = #{record.hrDate,jdbcType=TIMESTAMP},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -180,7 +190,8 @@
       HR_SAL = #{record.hrSal,jdbcType=VARCHAR},
       HR_JOBINFOR = #{record.hrJobinfor,jdbcType=VARCHAR},
       HR_WELFARE = #{record.hrWelfare,jdbcType=VARCHAR},
-      HR_COMINFOR = #{record.hrCominfor,jdbcType=VARCHAR}
+      HR_ADDRESS = #{record.hrAddress,jdbcType=VARCHAR},
+      HR_DATE = #{record.hrDate,jdbcType=TIMESTAMP}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
