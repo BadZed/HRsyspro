@@ -174,76 +174,6 @@ public class TEmpExample {
             return (Criteria) this;
         }
 
-        public Criteria andEmpNameIsNull() {
-            addCriterion("EMP_NAME is null");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameIsNotNull() {
-            addCriterion("EMP_NAME is not null");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameEqualTo(String value) {
-            addCriterion("EMP_NAME =", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameNotEqualTo(String value) {
-            addCriterion("EMP_NAME <>", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameGreaterThan(String value) {
-            addCriterion("EMP_NAME >", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameGreaterThanOrEqualTo(String value) {
-            addCriterion("EMP_NAME >=", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameLessThan(String value) {
-            addCriterion("EMP_NAME <", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameLessThanOrEqualTo(String value) {
-            addCriterion("EMP_NAME <=", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameLike(String value) {
-            addCriterion("EMP_NAME like", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameNotLike(String value) {
-            addCriterion("EMP_NAME not like", value, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameIn(List<String> values) {
-            addCriterion("EMP_NAME in", values, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameNotIn(List<String> values) {
-            addCriterion("EMP_NAME not in", values, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameBetween(String value1, String value2) {
-            addCriterion("EMP_NAME between", value1, value2, "empName");
-            return (Criteria) this;
-        }
-
-        public Criteria andEmpNameNotBetween(String value1, String value2) {
-            addCriterion("EMP_NAME not between", value1, value2, "empName");
-            return (Criteria) this;
-        }
-
         public Criteria andEmpPassIsNull() {
             addCriterion("EMP_PASS is null");
             return (Criteria) this;
@@ -374,63 +304,63 @@ public class TEmpExample {
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdIsNull() {
-            addCriterion("EMP_RE_ID is null");
+        public Criteria andEmpSerResumeIdIsNull() {
+            addCriterion("EMP_SER_RESUME_ID is null");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdIsNotNull() {
-            addCriterion("EMP_RE_ID is not null");
+        public Criteria andEmpSerResumeIdIsNotNull() {
+            addCriterion("EMP_SER_RESUME_ID is not null");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdEqualTo(Long value) {
-            addCriterion("EMP_RE_ID =", value, "empReId");
+        public Criteria andEmpSerResumeIdEqualTo(Long value) {
+            addCriterion("EMP_SER_RESUME_ID =", value, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdNotEqualTo(Long value) {
-            addCriterion("EMP_RE_ID <>", value, "empReId");
+        public Criteria andEmpSerResumeIdNotEqualTo(Long value) {
+            addCriterion("EMP_SER_RESUME_ID <>", value, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdGreaterThan(Long value) {
-            addCriterion("EMP_RE_ID >", value, "empReId");
+        public Criteria andEmpSerResumeIdGreaterThan(Long value) {
+            addCriterion("EMP_SER_RESUME_ID >", value, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdGreaterThanOrEqualTo(Long value) {
-            addCriterion("EMP_RE_ID >=", value, "empReId");
+        public Criteria andEmpSerResumeIdGreaterThanOrEqualTo(Long value) {
+            addCriterion("EMP_SER_RESUME_ID >=", value, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdLessThan(Long value) {
-            addCriterion("EMP_RE_ID <", value, "empReId");
+        public Criteria andEmpSerResumeIdLessThan(Long value) {
+            addCriterion("EMP_SER_RESUME_ID <", value, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdLessThanOrEqualTo(Long value) {
-            addCriterion("EMP_RE_ID <=", value, "empReId");
+        public Criteria andEmpSerResumeIdLessThanOrEqualTo(Long value) {
+            addCriterion("EMP_SER_RESUME_ID <=", value, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdIn(List<Long> values) {
-            addCriterion("EMP_RE_ID in", values, "empReId");
+        public Criteria andEmpSerResumeIdIn(List<Long> values) {
+            addCriterion("EMP_SER_RESUME_ID in", values, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdNotIn(List<Long> values) {
-            addCriterion("EMP_RE_ID not in", values, "empReId");
+        public Criteria andEmpSerResumeIdNotIn(List<Long> values) {
+            addCriterion("EMP_SER_RESUME_ID not in", values, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdBetween(Long value1, Long value2) {
-            addCriterion("EMP_RE_ID between", value1, value2, "empReId");
+        public Criteria andEmpSerResumeIdBetween(Long value1, Long value2) {
+            addCriterion("EMP_SER_RESUME_ID between", value1, value2, "empSerResumeId");
             return (Criteria) this;
         }
 
-        public Criteria andEmpReIdNotBetween(Long value1, Long value2) {
-            addCriterion("EMP_RE_ID not between", value1, value2, "empReId");
+        public Criteria andEmpSerResumeIdNotBetween(Long value1, Long value2) {
+            addCriterion("EMP_SER_RESUME_ID not between", value1, value2, "empSerResumeId");
             return (Criteria) this;
         }
     }

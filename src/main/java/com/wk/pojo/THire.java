@@ -73,4 +73,6 @@ public class THire implements Serializable{
     public void setHrDate(Date hrDate) {
         this.hrDate = hrDate;
     }
+
+
 }

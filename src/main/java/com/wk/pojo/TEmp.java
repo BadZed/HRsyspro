@@ -2,16 +2,14 @@ package com.wk.pojo;
 
 import java.io.Serializable;
 
-public class TEmp implements Serializable {
+public class TEmp implements Serializable{
     private String empAccount;
-
-    private String empName;
 
     private String empPass;
 
     private Short empStatus;
 
-    private Long empReId;
+    private Long empSerResumeId;
 
     public String getEmpAccount() {
         return empAccount;
@@ -19,14 +17,6 @@ public class TEmp implements Serializable {
 
     public void setEmpAccount(String empAccount) {
         this.empAccount = empAccount == null ? null : empAccount.trim();
-    }
-
-    public String getEmpName() {
-        return empName;
-    }
-
-    public void setEmpName(String empName) {
-        this.empName = empName == null ? null : empName.trim();
     }
 
     public String getEmpPass() {
@@ -45,22 +35,11 @@ public class TEmp implements Serializable {
         this.empStatus = empStatus;
     }
 
-    public Long getEmpReId() {
-        return empReId;
+    public Long getEmpSerResumeId() {
+        return empSerResumeId;
     }
 
-    public void setEmpReId(Long empReId) {
-        this.empReId = empReId;
-    }
-
-    @Override
-    public String toString() {
-        return "TEmp{" +
-                "empAccount='" + empAccount + '\'' +
-                ", empName='" + empName + '\'' +
-                ", empPass='" + empPass + '\'' +
-                ", empStatus=" + empStatus +
-                ", empReId=" + empReId +
-                '}';
+    public void setEmpSerResumeId(Long empSerResumeId) {
+        this.empSerResumeId = empSerResumeId;
     }
 }
