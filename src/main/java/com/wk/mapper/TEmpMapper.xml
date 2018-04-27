@@ -6,6 +6,10 @@
     <result column="EMP_PASS" property="empPass" jdbcType="VARCHAR" />
     <result column="EMP_STATUS" property="empStatus" jdbcType="DECIMAL" />
     <result column="EMP_SER_RESUME_ID" property="empSerResumeId" jdbcType="DECIMAL" />
+    <result column="EMP_JOB" property="empJob" jdbcType="VARCHAR" />
+    <result column="EMP_DEPARTMENT" property="empDepartment" jdbcType="VARCHAR" />
+    <result column="EMP_DATE" property="empDate" jdbcType="VARCHAR" />
+    <result column="EMP_JOB_ID" property="empJobId" jdbcType="DECIMAL" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +70,8 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    EMP_ACCOUNT, EMP_PASS, EMP_STATUS, EMP_SER_RESUME_ID
+    EMP_ACCOUNT, EMP_PASS, EMP_STATUS, EMP_SER_RESUME_ID, EMP_JOB, EMP_DEPARTMENT, EMP_DATE, 
+    EMP_JOB_ID
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.wk.pojo.TEmpExample" >
     select
@@ -90,9 +95,11 @@
   </delete>
   <insert id="insert" parameterType="com.wk.pojo.TEmp" >
     insert into T_EMP (EMP_ACCOUNT, EMP_PASS, EMP_STATUS, 
-      EMP_SER_RESUME_ID)
+      EMP_SER_RESUME_ID, EMP_JOB, EMP_DEPARTMENT, 
+      EMP_DATE, EMP_JOB_ID)
     values (#{empAccount,jdbcType=VARCHAR}, #{empPass,jdbcType=VARCHAR}, #{empStatus,jdbcType=DECIMAL}, 
-      #{empSerResumeId,jdbcType=DECIMAL})
+      #{empSerResumeId,jdbcType=DECIMAL}, #{empJob,jdbcType=VARCHAR}, #{empDepartment,jdbcType=VARCHAR}, 
+      #{empDate,jdbcType=VARCHAR}, #{empJobId,jdbcType=DECIMAL})
   </insert>
   <insert id="insertSelective" parameterType="com.wk.pojo.TEmp" >
     insert into T_EMP
@@ -109,6 +116,18 @@
       <if test="empSerResumeId != null" >
         EMP_SER_RESUME_ID,
       </if>
+      <if test="empJob != null" >
+        EMP_JOB,
+      </if>
+      <if test="empDepartment != null" >
+        EMP_DEPARTMENT,
+      </if>
+      <if test="empDate != null" >
+        EMP_DATE,
+      </if>
+      <if test="empJobId != null" >
+        EMP_JOB_ID,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="empAccount != null" >
@@ -122,6 +141,18 @@
       </if>
       <if test="empSerResumeId != null" >
         #{empSerResumeId,jdbcType=DECIMAL},
+      </if>
+      <if test="empJob != null" >
+        #{empJob,jdbcType=VARCHAR},
+      </if>
+      <if test="empDepartment != null" >
+        #{empDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="empDate != null" >
+        #{empDate,jdbcType=VARCHAR},
+      </if>
+      <if test="empJobId != null" >
+        #{empJobId,jdbcType=DECIMAL},
       </if>
     </trim>
   </insert>
@@ -146,6 +177,18 @@
       <if test="record.empSerResumeId != null" >
         EMP_SER_RESUME_ID = #{record.empSerResumeId,jdbcType=DECIMAL},
       </if>
+      <if test="record.empJob != null" >
+        EMP_JOB = #{record.empJob,jdbcType=VARCHAR},
+      </if>
+      <if test="record.empDepartment != null" >
+        EMP_DEPARTMENT = #{record.empDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.empDate != null" >
+        EMP_DATE = #{record.empDate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.empJobId != null" >
+        EMP_JOB_ID = #{record.empJobId,jdbcType=DECIMAL},
+      </if>
     </set>
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
@@ -156,7 +199,11 @@
     set EMP_ACCOUNT = #{record.empAccount,jdbcType=VARCHAR},
       EMP_PASS = #{record.empPass,jdbcType=VARCHAR},
       EMP_STATUS = #{record.empStatus,jdbcType=DECIMAL},
-      EMP_SER_RESUME_ID = #{record.empSerResumeId,jdbcType=DECIMAL}
+      EMP_SER_RESUME_ID = #{record.empSerResumeId,jdbcType=DECIMAL},
+      EMP_JOB = #{record.empJob,jdbcType=VARCHAR},
+      EMP_DEPARTMENT = #{record.empDepartment,jdbcType=VARCHAR},
+      EMP_DATE = #{record.empDate,jdbcType=VARCHAR},
+      EMP_JOB_ID = #{record.empJobId,jdbcType=DECIMAL}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
